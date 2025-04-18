@@ -51,6 +51,7 @@ namespace GamePolygon
             Coins = PlayerPrefs.GetInt(PPK_COINS, initialCoins);
         }
 
+        [ContextMenu("Clear All Player Prefs")]public void ClearAllPrefs() {    PlayerPrefs.DeleteAll();}
         public void AddCoins(int amount)
         {
             Coins += amount;

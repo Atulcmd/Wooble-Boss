@@ -24,7 +24,6 @@ public class MenuManager : MonoBehaviour {
         CurrentLevel = PlayerPrefs.GetInt("Level", 0);
         CurrentLevelText.text = "FLOOR " + CurrentLevel;
         Coins.text = ""+ PlayerPrefs.GetInt("Score", 0);
-        StartCoroutine(ShowCustomAds());
         Debug.Log("Current char " + PlayerPrefs.GetInt("CURRENT_CHARACTER", 0));
 	}
 
@@ -65,24 +64,8 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene("CharacterSelection");
 
     }
+    
 
-    public void ShareClick()
-    {
-        StartCoroutine(StartShare());
-    }
-
-    IEnumerator StartShare()
-    {
-        yield return new WaitForEndOfFrame();
-        new NativeShare().SetSubject(Subject).SetText(Body).Share();
-    }
-
-    IEnumerator ShowCustomAds() {
-
-        yield return new WaitForSeconds(2.0f);
-        CustomAds.SetActive(true);
-
-    }
 
 
 }
