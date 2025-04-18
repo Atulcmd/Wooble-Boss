@@ -70,7 +70,7 @@ public class GameManager2 : MonoBehaviour
 
     IEnumerator GameOver() {
         
-        Adcontrol.instance.ShowAds();
+       
         yield return new WaitForSeconds(1f);
         audio.Stop();
         GameOverUI.SetActive(true);
@@ -94,7 +94,6 @@ public class GameManager2 : MonoBehaviour
         GamePanelUI.SetActive(false);
         totalCash = PlayerPrefs.GetInt("Score", 0);
         PlayerPrefs.SetInt("Score", totalCash + currentCash);
-        Adcontrol.instance.ShowAds();
         yield return new WaitForSeconds(2f);
         GameWinUI.SetActive(true);
 
